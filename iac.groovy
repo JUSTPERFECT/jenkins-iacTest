@@ -16,7 +16,7 @@ pipelineJob('Pipeline') {
             sh 'sudo yum install httpd -y'
           } 
           stage('build') {
-            sh 'sudo yum install nginix -y'
+            sh 'sudo yum install mysql -y'
           }
         }
       """.stripIndent())      
