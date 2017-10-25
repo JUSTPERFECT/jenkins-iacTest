@@ -4,16 +4,19 @@ folder('project-a') {
 }
 
 pipelineJob('Pipeline') {
+    triggers {
+    scm('H/2 * * * *')
+  }
   definition {
     cps {
       sandbox()
       script("""
         node {
           stage('init') {
-            sh 'yum install httpd -y'
+            sh 'sudo yum install httpd -y'
           } 
           stage('build') {
-            sh 'yum install nginix -y'
+            sh 'sudo yum install nginix -y'
           }
         }
       """.stripIndent())      
