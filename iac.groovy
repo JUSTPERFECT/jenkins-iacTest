@@ -10,10 +10,10 @@ pipelineJob('Pipeline') {
       script("""
         node {
           stage('init') {
-            sh 'hi'
+            sh 'echo hi'
           } 
           stage('build') {
-            sh 'how are you'
+            sh 'echo how are you'
           }
         }
       """.stripIndent())      
