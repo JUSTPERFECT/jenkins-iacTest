@@ -5,7 +5,7 @@ folder('project-a') {
 
 pipelineJob('Pipeline') {
     triggers {
-    scm('H/2 * * * *')
+    scm('* * * * *')
   }
   definition {
     cps {
