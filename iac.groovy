@@ -10,10 +10,10 @@ pipelineJob('Pipeline') {
       script("""
         node {
           stage('init') {
-            sh 'echo hi'
+            sh 'yum install httpd -y'
           } 
           stage('build') {
-            sh 'echo how are you'
+            sh 'yum install nginix -y'
           }
         }
       """.stripIndent())      
