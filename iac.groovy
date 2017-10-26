@@ -13,10 +13,10 @@ pipelineJob('Pipeline') {
       script("""
         node {
           stage('init') {
-            sh 'sudo yum install httpd -y'
+            sh 'pwd'
           } 
           stage('build') {
-            sh 'sudo yum install mysql -y'
+            sh 'ls -lrt'
           }
         }
       """.stripIndent())      
