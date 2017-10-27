@@ -6,7 +6,7 @@ pipelineJob('Maven-Test') {
     cps {
       sandbox()
       script("""
-        node {
+        node('master') {
             stage ('Checkout') {
                git url: 'https://github.com/JUSTPERFECT/jenkins-maven.git'
                }
