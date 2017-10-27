@@ -13,7 +13,7 @@ pipelineJob('Maven-Test') {
             stage ('Initialize') {
               sh 'mvn package'
               }
-        }
+         }
         """.stripIndent())      
     }
   }
