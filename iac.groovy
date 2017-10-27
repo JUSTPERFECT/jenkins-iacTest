@@ -1,9 +1,4 @@
-folder('project-a') {
-    displayName('Project A')
-    description('Folder for project A')
-}
-
-pipelineJob('Pipeline') {
+pipelineJob('Maven-Test') {
     triggers {
     scm('* * * * *')
   }
@@ -12,12 +7,12 @@ pipelineJob('Pipeline') {
       sandbox()
       script("""
         node {
-          stage('init') {
-            sh 'pwd'
-          } 
-          stage('build') {
-            sh 'ls -lrt'
-          }
+            stage ('Checkout') {
+    git url: 'https://github.com/JUSTPERFECT/jenkins-maven.git'
+  }
+  stage ('Initialize') {
+          sh 'mvn package'
+  }
         }
       """.stripIndent())      
     }
