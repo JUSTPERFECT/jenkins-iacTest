@@ -14,7 +14,7 @@ pipelineJob('Maven-Test') {
               sh 'mvn package'
               }
         }
-      """.stripIndent())      
+        """.stripIndent())      
     }
   }
 }
