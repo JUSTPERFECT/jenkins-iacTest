@@ -27,6 +27,10 @@ pipelineJob('AWS-VPC-creation') {
       sandbox()
       script("""
         node('master') {
+            environment {
+                AWS_ACCESS_KEY_ID     = credentials('AWS_ACCESS_KEY_ID')
+                AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
+                }
             stage ('Checkout') {
                git url: 'https://github.com/JUSTPERFECT/resta-vpc.git'
                }
