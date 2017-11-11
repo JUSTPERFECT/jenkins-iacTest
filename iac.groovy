@@ -21,3 +21,23 @@ pipelineJob('Restarent-App-build') {
     }
   }
 }
+pipelineJob('AWS-VPC-creation') {
+  definition {
+    cps {
+      sandbox()
+      script("""
+        node('master') {
+            stage ('Checkout') {
+               git url: 'https://github.com/JUSTPERFECT/resta-vpc.git'
+               }
+            stage ('plan') {
+              sh '/opt/terraform/terraform plan'
+              }
+            stage ('apply') {
+            sh '/opt/terraform/terraform apply'
+            }
+         }
+        """.stripIndent())      
+    }
+  }
+}
