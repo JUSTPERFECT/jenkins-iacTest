@@ -35,8 +35,8 @@ pipelineJob('AWS-VPC-creation') {
                git url: 'https://github.com/JUSTPERFECT/resta-vpc.git'
                }
             stage ('plan') {
-              sh 'export AWS_ACCESS_KEY_ID=${env.AWS_ACCESS_KEY_ID}'
-              sh 'export AWS_SECRET_ACCESS_KEY=${env.AWS_SECRET_ACCESS_KEY}'
+              sh 'export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}'
+              sh 'export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}'
               sh '/opt/terraform/terraform plan'
               }
             stage ('apply') {
