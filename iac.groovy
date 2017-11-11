@@ -14,7 +14,7 @@ pipelineJob('Restarent-App-build') {
               sh '/opt/maven/bin/mvn package'
               }
             stage ('upload to nexus') {
-            nexusArtifactUploader artifacts: [[artifactId: 'newtonn', classifier: '', file: 'target/newtonn.war', type: 'war']], credentialsId: 'd4b6cc01-94ed-4024-9dfd-50d99d8fd072', groupId: 'org.restarent.newton', nexusUrl: '13.126.250.227:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'releases', version: '${BUILD_NUMBER}'
+            nexusArtifactUploader artifacts: [[artifactId: 'newtonn', classifier: '', file: 'target/newtonn.war', type: 'war']], credentialsId: 'd10d7797-c0be-4036-b375-b3fb06cb93ba', groupId: 'org.restarent.newton', nexusUrl: '13.126.250.227:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'releases', version: '${BUILD_NUMBER}'
               }
          }
         """.stripIndent())      
